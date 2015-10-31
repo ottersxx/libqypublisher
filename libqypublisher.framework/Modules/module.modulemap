@@ -1,0 +1,6 @@
+framework module libqypublisher {
+  umbrella header "libqypublisher.h"
+
+  export *
+  module * { export * }
+}
