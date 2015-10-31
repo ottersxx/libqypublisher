@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
   spec.ios.library = 'z', 'iconv', 'stdc++.6'
   spec.source = { :git => 'https://github.com/ottersxx/libqypublisher.git', :tag => '1.1.53'}
   spec.preserve_paths      = 'libqypublisher.framework'
-  spec.public_header_files = 'libqypublisher.framework/Versions/A/Headers'
+  spec.public_header_files = 'libqypublisher.framework/Headers'
   spec.vendored_frameworks = 'libqypublisher.framework'
 end
