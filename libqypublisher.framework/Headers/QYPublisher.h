@@ -199,6 +199,40 @@ QY_EXTERN NSString *const QYStreamStateDidChangeNotification NS_DEPRECATED_IOS(3
  */
 - (void) switchCamera;
 
+/**
+ @abstract   开关闪光灯
+ @discussion 切换闪光灯的开关状态 开 <--> 关
+ 
+ @see setTorchMode
+ */
+- (void) toggleTorch;
 
+/**
+ @abstract   设置闪光灯
+ @param      mode  AVCaptureTorchModeOn/Off
+ @discussion 设置闪光灯的开关状态
+ @discussion 开始预览后开始有效
+ 
+ @see AVCaptureTorchMode
+ */
+- (void) setTorchMode: (AVCaptureTorchMode)mode;
+
+/**
+ @abstract   获取当前采集设备的指针
+ 
+ @discussion 开放本指针的目的是开放类似下列添加到AVCaptureDevice的 categories：
+   - AVCaptureDeviceFlash
+   - AVCaptureDeviceTorch
+   - AVCaptureDeviceFocus
+   - AVCaptureDeviceExposure
+   - AVCaptureDeviceWhiteBalance
+   - etc.
+ 
+ @return AVCaptureDevice* 预览开始前调用返回为nil，开始预览后，返回当前正在使用的摄像头
+
+ @warning  请勿修改摄像头的像素格式，帧率，分辨率等参数，修改后会导致推流工作异常或崩溃
+ @see AVCaptureDevice  AVCaptureDeviceTorch AVCaptureDeviceFocus
+ */
+- (AVCaptureDevice*) getCurrentCameraDevices;
 
 @end

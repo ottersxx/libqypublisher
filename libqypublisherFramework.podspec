@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'libqypublisherFramework'
-  spec.version      = '1.1.53'
+  spec.version      = '1.1.55'
   spec.license      = {
 :type => 'Proprietary',
 :text => <<-LICENSE
@@ -15,9 +15,10 @@ Pod::Spec.new do |spec|
   DESC
   spec.platform     = :ios, '7.0'
   spec.requires_arc = true
+  spec.frameworks   = 'AdSupport', 'iAd'
   spec.ios.library = 'z', 'iconv', 'stdc++.6'
-  spec.source = { :git => 'https://github.com/qyvideo/libqypublisher.git', :tag => '1.1.53'}
+  spec.source = { :git => 'https://github.com/ottersxx/libqypublisher.git', :tag => '1.1.55'}
   spec.preserve_paths      = 'libqypublisher.framework'
-  spec.public_header_files = 'libqypublisher.framework/Headers'
+  spec.public_header_files = 'libqypublisher.framework/Versions/A/Headers'
   spec.vendored_frameworks = 'libqypublisher.framework'
 end
